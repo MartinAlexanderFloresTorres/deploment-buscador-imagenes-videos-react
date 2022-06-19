@@ -1,0 +1,70 @@
+import imgLogo from "../img/logo2.png";
+import imgUser from "../img/userMartin.jpg";
+const body = document.querySelector("body");
+
+function Header() {
+  const handleMenu = () => {
+    body.classList.toggle("active");
+  };
+
+  return (
+    <header className="header">
+      <section className="header__contenedor max-width">
+        <div className="header__left">
+          <a className="header__logo" title="inicio" href="/">
+            <img className="header__img" src={imgLogo} alt="logo" />
+          </a>
+        </div>
+        <div className="header__right">
+          <nav className="header__navegacion">
+            <a href="/" className="header__link active">
+              Fotos
+            </a>
+            <a className="header__link" href="#">
+              Videos
+            </a>
+            <div className="header__contacto">
+              <a
+                className="header__link"
+                title="facebook"
+                href="https://web.facebook.com/garena.flores.9"
+                target="_blank"
+              >
+                <i className="bx bxl-facebook-circle" />
+                <span className="header__TextoContacto">Martin Flores</span>
+              </a>
+              <a
+                className="header__link"
+                title="instragram"
+                href="https://www.instagram.com/martin_flores_28/"
+                target="_blank"
+              >
+                <i className="bx bxl-instagram" />
+                <span className="header__TextoContacto">martin_flores_28</span>
+              </a>
+            </div>
+          </nav>
+
+          <div className="header__opciones">
+            <a
+              className="header__icoUser"
+              href="https://web.facebook.com/garena.flores.9"
+              target="_blank"
+              title="facebook"
+            >
+              <img className="icoUser" src={imgUser} alt="user" />
+            </a>
+            <button className="boton">
+              <i className="bx bx-cloud-upload ico" /> Subir
+            </button>
+            <div className="menu" onClick={handleMenu}>
+              <i className="bx bx-menu ico" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+  );
+}
+
+export default Header;
