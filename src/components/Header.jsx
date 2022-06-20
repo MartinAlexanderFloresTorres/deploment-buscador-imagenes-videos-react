@@ -11,8 +11,8 @@ function Header() {
     <header className="header">
       <section className="header__contenedor max-width">
         <div className="header__left">
-          <a className="header__logo" title="inicio" href="/">
-            <img className="header__img" src={imgLogo} alt="logo" />
+          <a title="inicio" href="/">
+            <img src={imgLogo} alt="logo" />
           </a>
         </div>
         <div className="header__right">

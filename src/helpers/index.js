@@ -3,7 +3,7 @@ const calcularPaginas = (total, registroPagina) => {
   return Math.ceil(total / registroPagina);
 };
 
-//=============== Retornar un numero aleatorio del 1 al 10 ===============//
+//=============== Retornar un numero aleatorio del 1 al 30 ===============//
 const Aleatorio = () => {
   return Math.floor(Math.floor(Math.random() * 15) + Math.random() * 15 + 1);
 };
