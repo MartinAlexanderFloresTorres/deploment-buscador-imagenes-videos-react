@@ -1,12 +1,14 @@
+import { Link, useLocation } from "react-router-dom";
 import imgLogo from "../img/logo2.png";
 import imgUser from "../img/userMartin.jpg";
-const body = document.querySelector("body");
 
+const body = document.querySelector("body");
 function Header() {
+  const location = useLocation();
+
   const handleMenu = () => {
     body.classList.toggle("active");
   };
-
   return (
     <header className="header">
       <section className="header__contenedor max-width">
@@ -17,12 +19,26 @@ function Header() {
         </div>
         <div className="header__right">
           <nav className="header__navegacion">
-            <a href="/" className="header__link active">
+            <Link
+              to="/"
+              className={`${
+                location.pathname === "/"
+                  ? "header__link active"
+                  : "header__link"
+              }`}
+            >
               Fotos
-            </a>
-            <a className="header__link" href="#">
+            </Link>
+            <Link
+              to="/videos"
+              className={`${
+                location.pathname === "/videos"
+                  ? "header__link active"
+                  : "header__link"
+              }`}
+            >
               Videos
-            </a>
+            </Link>
             <div className="header__contacto">
               <a
                 className="header__link"

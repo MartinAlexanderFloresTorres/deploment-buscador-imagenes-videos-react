@@ -1,4 +1,4 @@
-import Item from "./components/Item";
+import Item from "./Item";
 
 function Resultados({
   resultados,
@@ -7,6 +7,7 @@ function Resultados({
   totalPaginas,
   paginaActual,
   setPaginaActual,
+  video
 }) {
   const handleSiguiente = () => {
     if (paginaActual < totalPaginas) {
@@ -30,6 +31,7 @@ function Resultados({
                 resultado={resultado}
                 setInformacion={setInformacion}
                 setModal={setModal}
+                video={video}
               />
             ))}
           </div>

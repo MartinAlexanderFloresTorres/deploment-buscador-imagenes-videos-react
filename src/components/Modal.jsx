@@ -3,7 +3,7 @@ import { downloadImage } from "../helpers/DescargarImagen";
 import imgUserDefault from "../img/userDefault.webp";
 const body = document.querySelector("body");
 
-function Modal({ informacion, setInformacion, setModal }) {
+function Modal({ informacion, setInformacion, setModal, video }) {
   const [screen, setScrenn] = useState(false);
 
   const {
@@ -14,6 +14,8 @@ function Modal({ informacion, setInformacion, setModal }) {
     comments,
     user,
     userImageURL,
+    pageURL,
+    id,
   } = informacion;
 
   useEffect(() => {
@@ -67,13 +69,15 @@ function Modal({ informacion, setInformacion, setModal }) {
               </div>
             </div>
             <div className="modal__opciones">
-              <button
-                onClick={() => downloadImage(largeImageURL, "imagen")}
-                className="boton"
-                title="Descargar imagen"
-              >
-                Descargar gratis
-              </button>
+              {!video && (
+                <button
+                  onClick={() => downloadImage(largeImageURL, "imagen")}
+                  className="boton"
+                  title="Descargar imagen"
+                >
+                  Descargar gratis
+                </button>
+              )}
               <div
                 className="modal__close"
                 onClick={(e) => handleCerrarModal(e)}
@@ -87,16 +91,28 @@ function Modal({ informacion, setInformacion, setModal }) {
               className={`${screen ? "modal__image active" : "modal__image"}`}
             >
               <div className="contenidoModal">
-                <img src={largeImageURL} alt="imagen" />
+                {!video ? (
+                  <img src={largeImageURL} alt="imagen" />
+                ) : (
+                  <video
+                    width="100"
+                    heght="100"
+                    src={informacion.videos.tiny.url}
+                    alt="video"
+                    controls
+                  ></video>
+                )}
               </div>
-              <div className="moda__fullScreen">
-                <span className="fullScreen" onClick={() => setScrenn(true)}>
-                  <i className="bx bx-fullscreen ico" />
-                </span>
-                <span className="exitScreen" onClick={() => setScrenn(false)}>
-                  <i className="bx bx-exit-fullscreen ico" />
-                </span>
-              </div>
+              {!video && (
+                <div className="moda__fullScreen">
+                  <span className="fullScreen" onClick={() => setScrenn(true)}>
+                    <i className="bx bx-fullscreen ico" />
+                  </span>
+                  <span className="exitScreen" onClick={() => setScrenn(false)}>
+                    <i className="bx bx-exit-fullscreen ico" />
+                  </span>
+                </div>
+              )}
             </div>
           </div>
           <div className="modal__bottom">
@@ -129,13 +145,34 @@ function Modal({ informacion, setInformacion, setModal }) {
                 </p>
                 <span className="modal__descText">{tags}</span>
               </div>
+
+              {video && (
+                <div>
+                  <p className="modal__destiTulo">
+                    <i className="bx bxs-purchase-tag-alt" />
+                    <b>Duracion:</b>
+                  </p>
+                  <span className="modal__descText">
+                    {informacion.duration}s
+                  </span>
+                </div>
+              )}
             </div>
             <div className="modal__compartir">
-              <a className="modal__compartirLink" href="#">
-                Compartir <i className="bx bxs-share" />
+              <a
+                className="modal__compartirLink"
+                target="_blank"
+                href={!video ? largeImageURL : informacion.videos.tiny.url}
+              >
+                <i className="bx bx-link-alt" />{" "}
+                {!video ? "visualizar" : "Reproducir"}
               </a>
-              <a className="modal__compartirLink" href="#">
-                <i className="bx bxs-info-circle" />
+              <a
+                className="modal__compartirLink"
+                target="_blank"
+                href={!video ? pageURL : `https://pixabay.com/videos/id-${id}/`}
+              >
+                <i className="bx bxs-info-circle" /> Información
               </a>
             </div>
           </div>

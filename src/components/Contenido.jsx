@@ -1,8 +1,8 @@
 import React from "react";
 import Spiner from "./Spiner";
-import Resultados from "../Resultados";
+import Resultados from "./Resultados";
 
-function Contenido({
+function ContenidoImagen({
   spiner,
   resultados,
   setInformacion,
@@ -10,6 +10,7 @@ function Contenido({
   totalPaginas,
   paginaActual,
   setPaginaActual,
+  video
 }) {
   return (
     <div className="contenedor" id="contenedor">
@@ -23,10 +24,11 @@ function Contenido({
           totalPaginas={totalPaginas}
           paginaActual={paginaActual}
           setPaginaActual={setPaginaActual}
+          video={video}
         />
       )}
     </div>
   );
 }
 
-export default Contenido;
+export default ContenidoImagen;

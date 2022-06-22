@@ -8,7 +8,7 @@
   --white: white;
   --verde: #02be6e;
   --azul: #0a88d3;
-  --black-all: #191b26;
+  --black-all: #2d2e33;
   --black: black;
   --gris: #eaeaea;
   --gray: #626262;
@@ -177,6 +177,9 @@ video {
   transition: 1s ease all;
   transition-property: background-image;
   letter-spacing: 0.9px;
+}
+.baner-2{
+  background-image: url("./img/bg3.avif");
 }
 .baner__contenedor {
   width: 100%;
@@ -401,15 +404,21 @@ video {
 }
 .contenedor__pagianacionBtn {
   color: var(--white);
-  background: var(--verde);
+  background: var(--black);
   border-radius: 5px;
   padding: 10px 100px;
   transition: 0.3s ease all;
   font-weight: 500;
   text-align: center;
 }
+.contenedor__pagianacionBtn:last-child{
+  background: var(--verde);
+}
+.contenedor__pagianacionBtn:last-child:hover{
+  background: #01a55e;
+}
 .contenedor__pagianacionBtn:hover {
-  opacity: 0.8;
+  background: var(--black-all);
 }
 /*===== descubrir ===== */
 .descubrir {
