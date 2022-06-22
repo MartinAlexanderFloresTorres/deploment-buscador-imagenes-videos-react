@@ -178,7 +178,7 @@ video {
   transition-property: background-image;
   letter-spacing: 0.9px;
 }
-.baner-2{
+.baner-2 {
   background-image: url("./img/bg3.avif");
 }
 .baner__contenedor {
@@ -411,10 +411,10 @@ video {
   font-weight: 500;
   text-align: center;
 }
-.contenedor__pagianacionBtn:last-child{
+.contenedor__pagianacionBtn:last-child {
   background: var(--verde);
 }
-.contenedor__pagianacionBtn:last-child:hover{
+.contenedor__pagianacionBtn:last-child:hover {
   background: #01a55e;
 }
 .contenedor__pagianacionBtn:hover {
@@ -707,6 +707,7 @@ body.hidden {
   }
   .verVideo {
     position: static;
+    pointer-events: all;
   }
   .contenedor__description {
     width: 100%;
