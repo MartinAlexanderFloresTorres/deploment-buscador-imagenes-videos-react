@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Imagenes({ setBusquedad, spiner, setPaginaActual }) {
+function SearchImagen({ setBusquedad, spiner, setPaginaActual }) {
   const [search, setSearch] = useState("");
   const [error, setError] = useState(false);
 
@@ -164,4 +164,4 @@ function Imagenes({ setBusquedad, spiner, setPaginaActual }) {
   );
 }
 
-export default Imagenes;
+export default SearchImagen;

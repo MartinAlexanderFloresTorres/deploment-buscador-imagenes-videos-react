@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SearchImagen from "../components/searchImagen";
+import SearchImagen from "../components/SearchImagen";
 import Contenido from "../components/Contenido";
 import Modal from "../components/Modal";
 import { calcularPaginas, Aleatorio } from "../helpers/index";
