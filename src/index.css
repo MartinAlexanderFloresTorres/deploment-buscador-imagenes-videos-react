@@ -168,7 +168,7 @@ video {
   width: 100%;
   height: fit-content;
   background: rgba(0, 0, 0, 0.5);
-  background-image: url("./img/bg.avif");
+  background-image: url("./img/bg.webp");
   background-blend-mode: multiply;
   background-position: center;
   background-repeat: no-repeat;
@@ -179,7 +179,7 @@ video {
   letter-spacing: 0.9px;
 }
 .baner-2 {
-  background-image: url("./img/bg3.avif");
+  background-image: url("./img/bg3.webp");
 }
 .baner__contenedor {
   width: 100%;
